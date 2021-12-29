@@ -8,7 +8,7 @@ module.exports.create=function(req,res){
 }
 
 module.exports.gettasks=function(req,res){
-    Task.find({user:req.body.user},function(err,tasks){
+    Task.find({user:req.params.user},function(err,tasks){
         if(err){return;}
         return res.send(tasks);
     })
